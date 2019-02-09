@@ -43,8 +43,10 @@
     "cssnano": "^4.1.8"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:prod": "webpack -p --config prod.config.js",
+    "dev": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production && prettier --print-width=120 --parser html --write dist/*.html",
     "lint": "eslint -c .eslintrc.json ./src/**/*.js"
   },
   "repository": {
