@@ -1,5 +1,9 @@
 $font-stack: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
 
+$color-1: #F8F9FA;
+$color-2: #FFFFFF;
+$color-3: #343642;
+
 @font-face {
   font-family: "Roboto";
   font-style: normal;
@@ -12,31 +16,44 @@ body {
   padding: 0;
   margin: 0 auto;
   overflow: hidden;
-  background: #4494B5 center center;
+  background: $color-3 center center;
   height: 100vh;
 
-  header {
-    padding: 3px 10px;
-    margin: 0 auto;
+  a {
+    text-decoration: none;
   }
-}
 
-body {
-  padding: 0;
-  margin: 0 auto;
-  font-family: monospace;
-  overflow: hidden;
-  background: #4494B5 center center;
-  height: 100vh;
+  .c-header {
+    background: $color-3;
 
+    ul{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
 
-  header {
-    padding: 3px 10px;
-    margin: 0 auto;
+      li {
+        list-style-type: none;
+      }
+    }
+
+    a {
+      display: block;
+      height: 1em;
+      line-height: 1em;
+      padding: 0.4em 1em;
+      margin: 0 0.5em;
+      background: $color-3;
+      border: 1px solid whitesmoke;
+      border-radius: 5em;
+      color: #FFF;
+    }
+
   }
+
 
   .center {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
   }
