@@ -1,0 +1,19 @@
+body {
+    padding: 0;
+    margin: 0 auto;
+    font-family: monospace;
+    overflow: hidden;
+    background: #4494B5 center center;
+    height: 100vh;
+}
+
+header {
+    padding: 3px 10px;
+    margin: 0 auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
