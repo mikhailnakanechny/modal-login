@@ -1,0 +1,44 @@
+$font-stack: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+body {
+  font-family: $font-stack;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #4494B5 center center;
+  height: 100vh;
+
+  header {
+    padding: 3px 10px;
+    margin: 0 auto;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  font-family: monospace;
+  overflow: hidden;
+  background: #4494B5 center center;
+  height: 100vh;
+
+
+  header {
+    padding: 3px 10px;
+    margin: 0 auto;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}

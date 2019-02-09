@@ -1,12 +1,14 @@
 /* eslint-disable */
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: 'production',
-  entry: ['./src/js/index.js', './src/styles/index.css'],
+  entry: ["./src/js/index.js", "./src/scss/style.scss"],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
@@ -22,6 +24,27 @@ module.exports = {
         removeComments: true,
       },
     }),
+    new MiniCssExtractPlugin({
+      filename: "./css/style.bundle.css"
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: "./src/fonts",
+        to: "./fonts"
+      },
+      // {
+      //   from: "./src/favicon",
+      //   to: "./favicon"
+      // },
+      // {
+      //   from: "./src/img",
+      //   to: "./img"
+      // },
+      // {
+      //   from: "./src/uploads",
+      //   to: "./uploads"
+      // }
+    ])
   ],
   module: {
     rules: [
@@ -41,10 +64,6 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
-      },
-      {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           'file-loader',
@@ -57,6 +76,49 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(sass|scss)$/,
+        include: path.resolve(__dirname, "src/scss"),
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {}
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              url: false
+            }
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              sourceMap: true,
+              plugins: () => [
+                require("cssnano")({
+                  preset: [
+                    "default",
+                    {
+                      discardComments: {
+                        removeAll: true
+                      }
+                    }
+                  ]
+                })
+              ]
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      },
+
     ],
   },
 };
