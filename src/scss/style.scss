@@ -136,7 +136,7 @@ body {
 }
 
 .c-auth__forms {
-  padding: 1.5em;
+  padding: 1.5em 1.5em 0.5em 1.5em;
 
   .c-auth__formfield {
     position: relative;
@@ -179,6 +179,26 @@ body {
       border-radius: 0.3em;
     }
   }
+
+  .hide-pass {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 2.4em;
+    padding: 0.4em 1.5em;
+    font-size: 0.8em;
+    border-left: 1px solid rgba($color-3, .2);
+    color: black;
+  }
+
+  .c-auth__error{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1em;
+  }
+
+
 
 }
 
