@@ -4,7 +4,7 @@ const authModal = document.querySelector(".c-auth"),
   resetForm = document.querySelector(".c-auth__reset"),
   formModalTab = document.querySelector(".c-auth__select"),
   tabLogin = document.querySelector(".c-auth__sel-login"),
-  tabSignup = document.querySelector(".c-auth__sel-register"),
+  tabRegister = document.querySelector(".c-auth__sel-register"),
   linkToResetForm = document.querySelector(".c-auth__outer-reset"),
   linlToLoginForm = document.querySelector(".c-auth__outer-login"),
   nav = document.querySelector(".c-header__select");
@@ -39,6 +39,8 @@ function loginSelected() {
   loginForm.hidden = false;
   registerForm.hidden = true;
   resetForm.hidden = true;
+  tabLogin.classList.add("selected");
+  tabRegister.classList.remove("selected");
 }
 
 function registerSelected() {
@@ -46,6 +48,8 @@ function registerSelected() {
   loginForm.hidden = true;
   registerForm.hidden = false;
   resetForm.hidden = true;
+  tabRegister.classList.add("selected");
+  tabLogin.classList.remove("selected");
 }
 
 function resetSelected() {
