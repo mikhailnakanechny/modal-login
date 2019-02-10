@@ -30,6 +30,7 @@ body {
 
   .c-header__select {
     display: flex;
+    padding: 0;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -62,6 +63,11 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .c-auth {
@@ -136,11 +142,11 @@ body {
 }
 
 .c-auth__forms {
-  padding: 1.5em 1.5em 0.5em 1.5em;
+  padding: 0 1.5em 0.1em 1.5em;
 
   .c-auth__formfield {
     position: relative;
-    margin: 1em 0;
+    margin: 0.5em 0;
   }
 
   label {
@@ -149,15 +155,16 @@ body {
 
     &[for=remember-me] {
       color: black;
-      margin: 0;
+      font-size: 0.9em;
     }
   }
 
   input {
     margin: 0;
-    padding: 1em 2em 1em 2em;
+    padding: 0.7em 2em 0.7em 2em;
     width: 85%;
     border: 1px solid rgba($color-3, .2);
+    border-radius: 0.3em;
 
     &[type=password] {
       padding-right: 2em;
@@ -172,9 +179,9 @@ body {
     &[type=submit] {
       width: 100%;
       cursor: pointer;
+      font-weight: bold;
       background: $color-2;
       color: #FFF;
-      font-weight: bold;
       border: none;
       border-radius: 0.3em;
     }
@@ -185,19 +192,39 @@ body {
     position: absolute;
     right: 0;
     top: 2.4em;
-    padding: 0.4em 1.5em;
+    padding: 0.2em 1.5em;
     font-size: 0.8em;
     border-left: 1px solid rgba($color-3, .2);
     color: black;
   }
 
-  .c-auth__error{
+  .c-auth__error {
+    visibility: hidden;
     margin: 0;
     padding: 0;
     text-align: center;
     font-size: 1em;
+    color: red;
+
+    &--visible {
+      visibility: visible;
+      opacity: 1;
+    }
+
   }
 
+  .c-auth__outer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -5 em;
+    text-align: center;
+
+    a {
+      color: #FFF;
+      text-decoration: underline;
+    }
+  }
 
 
 }
