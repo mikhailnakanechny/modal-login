@@ -23,7 +23,7 @@ nav.onclick = function(event) {
 
 authModal.onclick = function(event) {
   let target = event.target;
-  if ((target.className === "c-auth__sel-login")||(target.className === "c-auth__outer-login")) {
+  if ((target.className === "c-auth__sel-login") || (target.className === "c-auth__outer-login")) {
     return loginSelected();
   }
   if (target.className === "c-auth__sel-register") {
@@ -32,9 +32,19 @@ authModal.onclick = function(event) {
   if (target.className === "c-auth__outer-reset") {
     return resetSelected();
   }
+  if (target.className !== "c-auth__container") {
+    return hideModal();
+  }
+};
+
+document.onkeydown = function keyPress(e) {
+  if (e.key === "Escape") {
+    return hideModal();
+  }
 };
 
 function loginSelected() {
+  event.preventDefault();
   authModal.hidden = false;
   loginForm.hidden = false;
   registerForm.hidden = true;
@@ -44,6 +54,7 @@ function loginSelected() {
 }
 
 function registerSelected() {
+  event.preventDefault();
   authModal.hidden = false;
   loginForm.hidden = true;
   registerForm.hidden = false;
@@ -53,10 +64,21 @@ function registerSelected() {
 }
 
 function resetSelected() {
+  event.preventDefault();
   authModal.hidden = false;
   loginForm.hidden = true;
   registerForm.hidden = true;
   resetForm.hidden = false;
 }
+
+function hideModal() {
+  event.preventDefault();
+  authModal.hidden = true;
+  loginForm.hidden = true;
+  registerForm.hidden = true;
+  resetForm.hidden = true;
+}
+
+
 
 
