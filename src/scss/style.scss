@@ -1,9 +1,9 @@
 $font-stack: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
 
 $color-1: #FFFFFF;
-$color-2: #FFFFFF;
+$color-2: #2F889A;
 $color-3: #343642;
-//#F8F9F
+
 
 
 @font-face {
@@ -41,16 +41,20 @@ body {
     }
   }
 
-  a {
+  .c-header__sel {
     display: block;
     height: 1em;
     line-height: 1em;
     padding: 0.4em 1em;
-    margin: 0 0.5em;
+    margin: 0 0.5em 0 0;
     background: $color-3;
     border: 0.5px solid whitesmoke;
     border-radius: 5em;
     color: #FFF;
+
+    &--colored {
+      background: $color-2;
+    }
   }
 
 }
@@ -86,9 +90,9 @@ body {
 .c-modalAuth__container {
   position: relative;
   width: 90%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 4em auto;
-  background: whitesmoke;
+  background: $color-1;
   border-radius: 0.3em;
 
   .c-modalAuth__select {
@@ -105,15 +109,15 @@ body {
       text-align: center;
 
       &:first-child a {
-        border-radius: .25em 0 0 0;
+        border-radius: 0.3em 0 0 0;
       }
 
       &:last-child a {
-        border-radius: 0 .25em 0 0;
+        border-radius: 0 0.3em 0 0;
       }
     }
 
-    a {
+    .c-modalAuth__selBtn {
       display: block;
       width: 100%;
       height: 1em;
@@ -125,7 +129,7 @@ body {
       color: black;
 
       &--selected {
-        background: #FFF;
+        background: $color-1;
       }
     }
   }
