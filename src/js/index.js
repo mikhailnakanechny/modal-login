@@ -4,18 +4,13 @@ const authModal = document.querySelector(".c-auth"),
   loginForm = document.querySelector(".c-auth__login"),
   registerForm = document.querySelector(".c-auth__register"),
   resetForm = document.querySelector(".c-auth__reset"),
-  formModalTab = document.querySelector(".c-auth__select"),
   tabLogin = document.querySelector(".c-auth__sel-login"),
   tabRegister = document.querySelector(".c-auth__sel-register"),
-  linkToResetForm = document.querySelector(".c-auth__outer-reset"),
-  linlToLoginForm = document.querySelector(".c-auth__outer-login"),
   nav = document.querySelector(".c-header__select"),
   passHideLogin = document.getElementById("signin-pass"),
   passHideRegister = document.getElementById("signup-pass"),
   btnPassHideLogin = document.querySelector(".hide-pass-login"),
   btnPassHideRegister = document.querySelector(".hide-pass-register");
-
-// console.log(loginForm + " " + registerForm + " " + resetForm);
 
 nav.onclick = function(event) {
   let target = event.target;
@@ -83,7 +78,7 @@ function hideModal() {
   loginForm.hidden = true;
   registerForm.hidden = true;
   resetForm.hidden = true;
-};
+}
 
 function hidePassword(passInput) {
   if (passInput.type === "password") {
@@ -91,7 +86,7 @@ function hidePassword(passInput) {
   } else {
     passInput.type = "password";
   }
-};
+}
 
 btnPassHideLogin.onclick = () => {
   return hidePassword(passHideLogin);
@@ -101,6 +96,9 @@ btnPassHideRegister.onclick = () => {
   return hidePassword(passHideRegister);
 };
 
+document.querySelector(".c-auth__sel-register").addEventListener("invalid", function(){
+  console.log("invalid element!");
+});
 
 
 
