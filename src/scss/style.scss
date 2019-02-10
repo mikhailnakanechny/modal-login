@@ -4,7 +4,6 @@ $color-1: #FFFFFF;
 $color-2: #2F889A;
 $color-3: #343642;
 
-
 @font-face {
   font-family: "Roboto";
   font-style: normal;
@@ -79,16 +78,6 @@ body {
   background: $color-3;
   opacity: 0.8;
   z-index: 2;
-
-  &--hidden {
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  &--visible {
-    visibility: visible;
-    opacity: 1;
-  }
 }
 
 .c-auth__container {
