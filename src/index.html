@@ -25,7 +25,7 @@
             </ul>
 
             <div class="c-auth__forms">
-                <form class="c-auth__login" id="#login" hidden="false">
+                <form class="c-auth__login" id="#login" hidden>
                     <p class="c-auth__formfield">
                         <label class="c-auth__email" for="signin-email">E-mail</label>
                         <input id="signin-email" type="email"
@@ -35,8 +35,8 @@
                     <p class="c-auth__formfield">
                         <label class="c-auth__password" for="signin-pass">Password</label>
                         <input id="signin-pass" type="text"
-                               placeholder="Password">
-                        <a href="#" class="hide-pass">Hide</a>
+                               placeholder="Password" autocomplete="current-password">
+                        <a class="hide-pass-login" href="#" >Hide</a>
                     </p>
 
                     <p class="c-auth__checkbox">
@@ -53,7 +53,7 @@
                     <p class="c-auth__outer"><a class="c-auth__outer-reset" href="#">Forgot your password?</a></p>
 
                 </form>
-                <form class="c-auth__register" id="#register" hidden="false">
+                <form class="c-auth__register" id="#register" hidden>
 
                     <p class="c-auth__formfield">
                         <label class="c-auth__user" for="create-user">E-mail</label>
@@ -69,8 +69,8 @@
                     <p class="c-auth__formfield">
                         <label class="c-auth__password" for="signup-pass">Password</label>
                         <input id="signup-pass" type="text"
-                               placeholder="Password">
-                        <a href="#" class="hide-pass">Hide</a>
+                               placeholder="Password" autocomplete="current-password">
+                        <a class="hide-pass-register" href="#" >Hide</a>
                     </p>
 
                     <p class="c-auth__checkbox">
@@ -85,7 +85,7 @@
                     <p class="c-auth__error">Error message</p>
 
                 </form>
-                <form class="c-auth__reset" id="#reset" hidden="false">
+                <form class="c-auth__reset" id="#reset" hidden>
 
                     <p class="c-auth__lost-message">Lost your password? Please, enter your email address.
                         You will receive a link to create a new password.</p>

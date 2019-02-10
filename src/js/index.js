@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 const authModal = document.querySelector(".c-auth"),
   loginForm = document.querySelector(".c-auth__login"),
   registerForm = document.querySelector(".c-auth__register"),
@@ -7,7 +9,11 @@ const authModal = document.querySelector(".c-auth"),
   tabRegister = document.querySelector(".c-auth__sel-register"),
   linkToResetForm = document.querySelector(".c-auth__outer-reset"),
   linlToLoginForm = document.querySelector(".c-auth__outer-login"),
-  nav = document.querySelector(".c-header__select");
+  nav = document.querySelector(".c-header__select"),
+  passHideLogin = document.getElementById("signin-pass"),
+  passHideRegister = document.getElementById("signup-pass"),
+  btnPassHideLogin = document.querySelector(".hide-pass-login"),
+  btnPassHideRegister = document.querySelector(".hide-pass-register");
 
 // console.log(loginForm + " " + registerForm + " " + resetForm);
 
@@ -32,7 +38,7 @@ authModal.onclick = function(event) {
   if (target.className === "c-auth__outer-reset") {
     return resetSelected();
   }
-  if (target.className !== "c-auth__container") {
+  if (target.className === "c-auth") {
     return hideModal();
   }
 };
@@ -77,7 +83,23 @@ function hideModal() {
   loginForm.hidden = true;
   registerForm.hidden = true;
   resetForm.hidden = true;
-}
+};
+
+function hidePassword(passInput) {
+  if (passInput.type === "password") {
+    passInput.type = "text";
+  } else {
+    passInput.type = "password";
+  }
+};
+
+btnPassHideLogin.onclick = () => {
+  return hidePassword(passHideLogin);
+};
+
+btnPassHideRegister.onclick = () => {
+  return hidePassword(passHideRegister);
+};
 
 
 

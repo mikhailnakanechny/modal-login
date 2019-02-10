@@ -158,7 +158,6 @@ body {
       font-size: 0.9em;
     }
 
-
     &[for=agree] {
       color: black;
       font-size: 0.9em;
@@ -193,7 +192,7 @@ body {
     }
   }
 
-  .hide-pass {
+  .hide-pass-login, .hide-pass-register {
     display: inline-block;
     position: absolute;
     right: 0;
