@@ -1,0 +1,252 @@
+$font-stack: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
+
+$color-1: #FFFFFF;
+$color-2: #2F889A;
+$color-3: #343642;
+
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+body {
+  font-family: $font-stack;
+  padding: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  background: $color-3 center center;
+  height: 100vh;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.c-header {
+  background: $color-3;
+
+  .c-header__select {
+    display: flex;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  .c-header__sel {
+    display: block;
+    height: 1em;
+    line-height: 1em;
+    padding: 0.4em 1em;
+    margin: 0 0.5em 0 0;
+    background: $color-3;
+    border: 0.5px solid whitesmoke;
+    border-radius: 5em;
+    color: #FFF;
+
+    &--colored {
+      background: $color-2;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.c-auth {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $color-3;
+  opacity: 0.8;
+  z-index: 2;
+
+  &--hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &--visible {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.c-auth__container {
+  position: relative;
+  width: 90%;
+  min-width: 350px;
+  max-width: 500px;
+  margin: 4em auto;
+  background: $color-1;
+  border-radius: 0.3em;
+
+  .c-auth__select {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+
+    li {
+      float: left;
+      list-style-type: none;
+      width: 50%;
+      text-align: center;
+
+      &:first-child a {
+        border-radius: 0.3em 0 0 0;
+      }
+
+      &:last-child a {
+        border-radius: 0 0.3em 0 0;
+      }
+    }
+
+    .c-auth__sel-login, .c-auth__sel-register {
+      display: block;
+      width: 100%;
+      height: 1em;
+      line-height: 1em;
+      padding: 1em 0;
+      margin: 0;
+      background: darken($color-1, 20%);
+      border-radius: 0.3em;
+      color: black;
+
+      &.selected {
+        background: $color-1;
+      }
+    }
+  }
+
+}
+
+.c-auth__forms {
+  padding: 0 1.5em 0.1em 1.5em;
+
+  .c-auth__formfield {
+    position: relative;
+    margin: 0.5em 0;
+  }
+
+  label {
+    display: inline-block;
+    color: transparent;
+
+    &[for=remember-me] {
+      color: black;
+      font-size: 0.9em;
+    }
+
+    &[for=agree] {
+      color: black;
+      font-size: 0.9em;
+    }
+  }
+
+  input {
+    margin: 0;
+    padding: 0.7em 2em 0.7em 2em;
+    width: 85%;
+    border: 1px solid rgba($color-3, .2);
+    border-radius: 0.3em;
+
+    &[type=password] {
+      padding-right: 2em;
+    }
+
+    &[type=checkbox] {
+      display: inline-block;
+      padding-right: 3em;
+      width: 1em;
+    }
+
+    &[type=submit] {
+      width: 100%;
+      cursor: pointer;
+      font-weight: bold;
+      background: $color-2;
+      color: #FFF;
+      border: none;
+      border-radius: 0.3em;
+    }
+  }
+
+  .hide-pass-login, .hide-pass-register {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 2.4em;
+    padding: 0.2em 1.5em;
+    font-size: 0.8em;
+    border-left: 1px solid rgba($color-3, .2);
+    color: black;
+  }
+
+  .c-auth__error {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1em;
+    color: red;
+
+    &--visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .c-auth__outer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -5 em;
+    text-align: center;
+
+    a {
+      color: #FFF;
+      text-decoration: underline;
+    }
+  }
+
+  .c-auth__lost-message {
+    padding: 0 1em;
+    font-size: 0.7em;
+    text-align: center;
+  }
+
+  .c-auth__reset-btn {
+    margin-top: 1em;
+  }
+}
+
+#login, #register, #reset, .disable {
+  display: none;
+}
+
+#login.active, #register.active, #reset.active {
+  display: block;
+}
+
+
