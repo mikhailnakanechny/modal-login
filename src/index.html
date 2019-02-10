@@ -17,23 +17,40 @@
 </header>
 
 <main>
-    <!--<div class="c-modalAuth c-modalAuth&#45;&#45;hidden">-->
-    <div class="c-modalAuth">
-        <div class="c-modalAuth__container">
-            <ul class="c-modalAuth__select">
-                <li><a class="c-modalAuth__selBtn" href="#">Sign in</a></li>
-                <li><a class="c-modalAuth__selBtn" href="#">New account</a></li>
+    <div class="c-auth">
+        <div class="c-auth__container">
+            <ul class="c-auth__select">
+                <li><a class="c-auth__sel" href="#">Sign in</a></li>
+                <li><a class="c-auth__sel" href="#">New account</a></li>
             </ul>
 
-            <div class="c-modalAuth__forms">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                    dolore eu
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.</p>
+            <div class="c-auth__forms">
+                <form class="c-auth__login">
+                    <p class="c-auth__formfield">
+                        <label class="c-auth__email" for="signin-email">E-mail</label>
+                        <input id="signin-email" type="email"
+                               placeholder="E-mail">
+                    </p>
+
+                    <p class="c-auth__formfield">
+                        <label class="c-auth__password" for="signin-pass">Password</label>
+                        <input id="signin-pass" type="text"
+                               placeholder="Password">
+                        <a href="#" class="hide-pass">Hide</a>
+                    </p>
+
+                    <p class="c-auth__checkbox">
+                        <input type="checkbox" id="remember-me" checked>
+                        <label for="remember-me">Remember me</label>
+                    </p>
+
+                    <p class="c-auth__formfield">
+                        <input type="submit" value="Login">
+                    </p>
+
+                    <p class="c-auth__error">Error message </p>
+
+                </form>
             </div>
         </div>
     </div>
