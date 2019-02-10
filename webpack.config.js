@@ -1,28 +1,28 @@
 /* eslint-disable */
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require("webpack");
+const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: 'production',
+  mode: "production",
   entry: ["./src/js/index.js", "./src/scss/style.scss"],
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "index.js"
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(["dist"]),
     new HtmlWebpackPlugin({
-      title: 'modal-login',
-      template: 'src/index.html',
-      filename: 'index.html',
+      title: "modal-login",
+      template: "src/index.html",
+      filename: "index.html",
       minify: {
         collapseWhitespace: true,
-        removeComments: true,
-      },
+        removeComments: true
+      }
     }),
     new MiniCssExtractPlugin({
       filename: "./css/style.bundle.css"
@@ -35,19 +35,12 @@ module.exports = {
       {
         from: "./src/css",
         to: "./css"
-      },
-      // {
-      //   from: "./src/favicon",
-      //   to: "./favicon"
-      // },
-      // {
-      //   from: "./src/img",
-      //   to: "./img"
-      // },
-      // {
-      //   from: "./src/uploads",
-      //   to: "./uploads"
-      // }
+      }
+      //   new webpack.ProvidePlugin({
+      //     $: "jquery/dist/jquery.min.js",
+      //     jQuery: "jquery/dist/jquery.min.js",
+      //     "window.jQuery": "jquery/dist/jquery.min.js"
+      //   })
     ])
   ],
   module: {
@@ -56,29 +49,29 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
             presets: [
-              '@babel/preset-env',
+              "@babel/preset-env"
             ],
             plugins: [
-              '@babel/plugin-transform-runtime',
-            ],
-          },
-        },
+              "@babel/plugin-transform-runtime"
+            ]
+          }
+        }
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          'file-loader',
+          "file-loader",
           {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
               bypassOnDebug: true, // webpack@1.x
-              disable: true, // webpack@2.x and newer
-            },
-          },
-        ],
+              disable: true // webpack@2.x and newer
+            }
+          }
+        ]
       },
       {
         test: /\.(sass|scss)$/,
@@ -121,8 +114,8 @@ module.exports = {
             }
           }
         ]
-      },
+      }
 
-    ],
-  },
+    ]
+  }
 };

@@ -10,22 +10,22 @@
 <header class="c-header">
     <nav class="c-header__nav">
         <ul class="c-header__select">
-            <li><a class="c-header__sel" href="#">Sign in</a></li>
-            <li><a class="c-header__sel c-header__sel--colored" href="#">Sign up</a></li>
+            <li><a class="c-header__sel c-header__sel-login" href="#">Sign in</a></li>
+            <li><a class="c-header__sel c-header__sel-register c-header__sel--colored" href="#">Sign up</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
-    <div class="c-auth">
+    <div class="c-auth" hidden>
         <div class="c-auth__container">
             <ul class="c-auth__select">
-                <li><a class="c-auth__sel" href="#">Sign in</a></li>
-                <li><a class="c-auth__sel" href="#">New account</a></li>
+                <li><a class="c-auth__sel-login" href="#">Sign in</a></li>
+                <li><a class="c-auth__sel-register" href="#">New account</a></li>
             </ul>
 
             <div class="c-auth__forms">
-                <form class="c-auth__login">
+                <form class="c-auth__login" id="#login" hidden="false">
                     <p class="c-auth__formfield">
                         <label class="c-auth__email" for="signin-email">E-mail</label>
                         <input id="signin-email" type="email"
@@ -50,10 +50,10 @@
 
                     <p class="c-auth__error">Error message </p>
 
-                    <p class="c-auth__outer"><a href="#">Forgot your password?</a></p>
+                    <p class="c-auth__outer"><a class="c-auth__outer-reset" href="#">Forgot your password?</a></p>
 
                 </form>
-                <form class="c-auth__create">
+                <form class="c-auth__register" id="#register" hidden="false">
 
                     <p class="c-auth__formfield">
                         <label class="c-auth__user" for="create-user">E-mail</label>
@@ -85,7 +85,7 @@
                     <p class="c-auth__error">Error message</p>
 
                 </form>
-                <form class="c-auth__create">
+                <form class="c-auth__reset" id="#reset" hidden="false">
 
                     <p class="c-auth__lost-message">Lost your password? Please, enter your email address.
                         You will receive a link to create a new password.</p>
@@ -102,7 +102,7 @@
 
                     <p class="c-auth__error">Error message</p>
 
-                    <p class="c-auth__outer"><a href="#">Back to log-in</a></p>
+                    <p class="c-auth__outer"><a class="c-auth__outer-login" href="#">Back to log-in</a></p>
 
                 </form>
             </div>
@@ -110,7 +110,6 @@
     </div>
 
 </main>
-
 </body>
 </html>
 
