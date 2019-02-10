@@ -59,7 +59,7 @@ btnPassHideLogin.onclick = () => hidePassword(passHideLogin);
 btnPassHideRegister.onclick = () => hidePassword(passHideRegister);
 
 nav.onclick = function selectTab(event) {
-  const target = event.target;
+  const { target } = event;
   if (target.className === 'c-header__sel c-header__sel-login') {
     loginSelected();
   }
@@ -69,7 +69,7 @@ nav.onclick = function selectTab(event) {
 };
 
 authModal.onclick = function selectForms(event) {
-  const target = event.target;
+  const { target } = event;
   if ((target.className === 'c-auth__sel-login') || (target.className === 'c-auth__outer-login')) {
     loginSelected();
   }
