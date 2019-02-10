@@ -157,6 +157,12 @@ body {
       color: black;
       font-size: 0.9em;
     }
+
+
+    &[for=agree] {
+      color: black;
+      font-size: 0.9em;
+    }
   }
 
   input {
@@ -210,7 +216,6 @@ body {
       visibility: visible;
       opacity: 1;
     }
-
   }
 
   .c-auth__outer {
@@ -224,6 +229,16 @@ body {
       color: #FFF;
       text-decoration: underline;
     }
+  }
+
+  .c-auth__lost-message {
+    padding: 0 1em ;
+    font-size: 0.7em;
+    text-align: center;
+  }
+
+  .c-auth__reset-btn{
+    margin-top: 1em;
   }
 
 
