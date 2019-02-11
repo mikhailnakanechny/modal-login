@@ -1,46 +1,41 @@
 /* eslint-disable */
-const webpack = require("webpack");
-const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: "production",
-  entry: ["./src/js/index.js", "./src/scss/style.scss"],
+  mode: 'production',
+  entry: ['./src/js/index.js', './src/scss/style.scss'],
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "index.js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js'
   },
   plugins: [
-    new CleanWebpackPlugin(["dist"]),
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: "modal-login",
-      template: "src/index.html",
-      filename: "index.html",
+      title: 'modal-login',
+      template: 'src/index.html',
+      filename: 'index.html',
       minify: {
         collapseWhitespace: true,
         removeComments: true
       }
     }),
     new MiniCssExtractPlugin({
-      filename: "./css/style.bundle.css"
+      filename: './css/style.bundle.css'
     }),
     new CopyWebpackPlugin([
       {
-        from: "./src/fonts",
-        to: "./fonts"
+        from: './src/fonts',
+        to: './fonts'
       },
       {
-        from: "./src/css",
-        to: "./css"
+        from: './src/css',
+        to: './css'
       }
-      //   new webpack.ProvidePlugin({
-      //     $: "jquery/dist/jquery.min.js",
-      //     jQuery: "jquery/dist/jquery.min.js",
-      //     "window.jQuery": "jquery/dist/jquery.min.js"
-      //   })
     ])
   ],
   module: {
@@ -49,13 +44,13 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
             presets: [
-              "@babel/preset-env"
+              '@babel/preset-env'
             ],
             plugins: [
-              "@babel/plugin-transform-runtime"
+              '@babel/plugin-transform-runtime'
             ]
           }
         }
@@ -63,9 +58,9 @@ module.exports = {
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
-          "file-loader",
+          'file-loader',
           {
-            loader: "image-webpack-loader",
+            loader: 'image-webpack-loader',
             options: {
               bypassOnDebug: true, // webpack@1.x
               disable: true // webpack@2.x and newer
@@ -75,28 +70,28 @@ module.exports = {
       },
       {
         test: /\.(sass|scss)$/,
-        include: path.resolve(__dirname, "src/scss"),
+        include: path.resolve(__dirname, 'src/scss'),
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: {}
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               sourceMap: true,
               url: false
             }
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
-              ident: "postcss",
+              ident: 'postcss',
               sourceMap: true,
               plugins: () => [
-                require("cssnano")({
+                require('cssnano')({
                   preset: [
-                    "default",
+                    'default',
                     {
                       discardComments: {
                         removeAll: true
@@ -108,7 +103,7 @@ module.exports = {
             }
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               sourceMap: true
             }
