@@ -91,11 +91,26 @@ document.onkeydown = function keyPress(e) {
 };
 
 const elements = document.getElementsByTagName('INPUT');
+const arrErr = document.querySelectorAll('.c-auth__error');
+
 for (let i = 0; i < elements.length; i += 1) {
-  elements[i].oninvalid = () => {
-    document.querySelectorAll('.c-auth__error')
-      .forEach((element) => {
-        element.hidden = false;
+  if (elements[i].type.toLowerCase() === 'submit') {
+    elements[i].onclick = () => {
+      arrErr.forEach((elm) => {
+        elm.hidden = true;
       });
+    };
+  }
+
+  elements[i].oninvalid = () => {
+    if ((i >= 0) && (i <= 3)) {
+      arrErr[0].hidden = false;
+    }
+    if ((i >= 4) && (i <= 8)) {
+      arrErr[1].hidden = false;
+    }
+    if ((i >= 9) && (i <= 10)) {
+      arrErr[2].hidden = false;
+    }
   };
 }
