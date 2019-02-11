@@ -89,3 +89,13 @@ document.onkeydown = function keyPress(e) {
     hideModal();
   }
 };
+
+const elements = document.getElementsByTagName('INPUT');
+for (let i = 0; i < elements.length; i += 1) {
+  elements[i].oninvalid = () => {
+    document.querySelectorAll('.c-auth__error')
+      .forEach((element) => {
+        element.hidden = false;
+      });
+  };
+}
