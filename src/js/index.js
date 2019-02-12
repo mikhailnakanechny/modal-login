@@ -98,9 +98,22 @@ document.onkeydown = function keyPress(e) {
   }
 };
 
-document.querySelector('.c-auth__login-btn').onclick = validateForm(loginForm);
-document.querySelector('.c-auth__reg-btn').onclick = validateForm(registerForm);
-document.querySelector('.c-auth__reset-btn').onclick = validateForm(resetForm);
+
+document.querySelector('.c-auth__login-btn')
+  .addEventListener('click', () => {
+    validateForm(loginForm);
+  });
+
+document.querySelector('.c-auth__reg-btn')
+  .addEventListener('click', () => {
+    validateForm(registerForm);
+  });
+
+document.querySelector('.c-auth__reset-btn')
+  .addEventListener('click', () => {
+    validateForm(resetForm);
+  });
+
 
 // const elements = document.getElementsByTagName('input');
 //

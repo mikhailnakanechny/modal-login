@@ -184,8 +184,13 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    font-size: 1em;
+    font-size: 0.8em;
     color: red;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
 
     &--visible {
       visibility: visible;
