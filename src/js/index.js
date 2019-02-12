@@ -87,6 +87,13 @@ authModal.onclick = function selectForms(event) {
   if (target.className === 'c-auth__outer-reset') {
     resetSelected();
   }
+  // if (target.className === 'c-auth') {
+  //   hideModal();
+  // }
+};
+
+authModal.onmousedown = function selectForms(event) {
+  const { target } = event;
   if (target.className === 'c-auth') {
     hideModal();
   }
