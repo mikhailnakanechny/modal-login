@@ -98,9 +98,31 @@ document.onkeydown = function keyPress(e) {
   }
 };
 
+document.querySelector('.c-auth__login-btn').onclick = validateForm(loginForm);
+document.querySelector('.c-auth__reg-btn').onclick = validateForm(registerForm);
+document.querySelector('.c-auth__reset-btn').onclick = validateForm(resetForm);
+
+// const elements = document.getElementsByTagName('input');
+//
+// for (let i = 0; i < elements.length; i += 1) {
+//   elements[3].onsubmit = (e) => {
+//     e.preventDefault();
+//     validateForm(loginForm);
+//   };
+//   elements[9].onsubmit = (e) => {
+//     e.preventDefault();
+//     validateForm(registerForm);
+//   };
+//   elements[11].onsubmit = (e) => {
+//     e.preventDefault();
+//     validateForm(resetForm);
+//   };
+// }
+
+
 // const btnSignIn = document.querySelector('.btn-SignIn');
 
 // loginForm.addEventListener('submit', validateForm);
-loginForm.onsubmit = validateForm(loginForm);
-registerForm.onsubmit = validateForm(registerForm);
-resetForm.onsubmit = validateForm(resetForm);
+// loginForm.onsubmit = validateForm(loginForm);
+// registerForm.onsubmit = validateForm(registerForm);
+// resetForm.onsubmit = validateForm(resetForm);
