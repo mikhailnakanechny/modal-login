@@ -87,9 +87,6 @@ authModal.onclick = function selectForms(event) {
   if (target.className === 'c-auth__outer-reset') {
     resetSelected();
   }
-  // if (target.className === 'c-auth') {
-  //   hideModal();
-  // }
 };
 
 authModal.onmousedown = function selectForms(event) {
@@ -120,29 +117,3 @@ document.querySelector('.c-auth__reset-btn')
   .addEventListener('click', () => {
     validateForm(resetForm);
   });
-
-
-// const elements = document.getElementsByTagName('input');
-//
-// for (let i = 0; i < elements.length; i += 1) {
-//   elements[3].onsubmit = (e) => {
-//     e.preventDefault();
-//     validateForm(loginForm);
-//   };
-//   elements[9].onsubmit = (e) => {
-//     e.preventDefault();
-//     validateForm(registerForm);
-//   };
-//   elements[11].onsubmit = (e) => {
-//     e.preventDefault();
-//     validateForm(resetForm);
-//   };
-// }
-
-
-// const btnSignIn = document.querySelector('.btn-SignIn');
-
-// loginForm.addEventListener('submit', validateForm);
-// loginForm.onsubmit = validateForm(loginForm);
-// registerForm.onsubmit = validateForm(registerForm);
-// resetForm.onsubmit = validateForm(resetForm);

@@ -1,11 +1,8 @@
 $font-stack: Roboto, "Open Sans", "Helvetica Neue", sans-serif;
 
-$color-1: #FFFFFF;
-$color-2: #2F889A;
-$color-3: #343642;
-
-//#2F889A
-//
+$color-1: #FFFFFF; //white
+$color-2: #2F889A; //teal
+$color-3: #343642; //gray
 
 @font-face {
   font-family: "Roboto";
@@ -50,9 +47,9 @@ body {
     padding: 0.4em 1em;
     margin: 0 0.5em 0 0;
     background: $color-3;
-    border: 0.5px solid whitesmoke;
+    border: 0.5px solid $color-1;
     border-radius: 5em;
-    color: #FFF;
+    color: $color-1;
 
     &--colored {
       background: $color-2;
@@ -66,8 +63,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: $color-3;
-  opacity: 0.8;
+  background: rgba($color-3, .8);
   z-index: 2;
 }
 
@@ -77,9 +73,9 @@ body {
   min-width: 350px;
   max-width: 500px;
   margin: 4em auto;
-  opacity: 1;
   background: $color-1;
   border-radius: 0.3em;
+  z-index: 9;
 
   .c-auth__select {
     display: flex;
@@ -123,6 +119,7 @@ body {
 
 .c-auth__forms {
   padding: 0 1.5em 0.1em 1.5em;
+  background: $color-1;
 
   .c-auth__formfield {
     position: relative;
@@ -169,7 +166,12 @@ body {
       color: #FFF;
       border: none;
       border-radius: 0.3em;
+      margin-bottom: 1em;
     }
+  }
+
+  #reset-email {
+    margin-bottom: 1em;
   }
 
   .hide-pass-login, .hide-pass-register1, .hide-pass-register2 {
@@ -191,13 +193,8 @@ body {
     color: red;
 
     p {
-      margin: 0;
+      margin: 0.5em;
       padding: 0;
-    }
-
-    &--visible {
-      visibility: visible;
-      opacity: 1;
     }
   }
 
@@ -220,7 +217,4 @@ body {
     text-align: center;
   }
 
-  .c-auth__reset-btn {
-    margin-top: 1em;
-  }
 }
