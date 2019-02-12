@@ -5,30 +5,34 @@ let passCount;
 let errCount;
 let err;
 
-function validate(element, errText, errField, regExp) {
-  const resultRegTest = regExp.test(element.value);
-  if (!resultRegTest) {
+function errMsgContol(ok, element, errText, errField) {
+  if (!ok) {
     element.style.border = '2px solid red';
     errField.innerHTML += `<p>${errText}</p>`;
     errField.hidden = false;
     err = true;
   } else {
     element.style.border = null;
-    errField.innerHTML = '';
-    errField.hidden = true;
-    err = false;
+    // // errField.innerHTML = '';
+    // // errField.hidden = true;
+    // err = false;
   }
+}
+
+function validate(element, errText, errField, regExp) {
+  const resultRegTest = regExp.test(element.value);
+  errMsgContol(resultRegTest, element, errText, errField);
 }
 
 function validateInputs(element, errField) {
   if (element.type.toLowerCase() === 'text') {
-    validate(element, 'check username: latin letters & numbers, start with latin letter, min length 3', errField, patternUser);
+    validate(element, 'Check username: latin letters & numbers, start with latin letter, min length 3', errField, patternUser);
   }
   if (element.type.toLowerCase() === 'email') {
-    validate(element, 'check email: latin letters & numbers, format: xxx@xxx.xx ', errField, patternEmail);
+    validate(element, 'Check email: latin letters & numbers, format: xxx@xxx.xx ', errField, patternEmail);
   }
   if (element.type.toLowerCase() === 'password') {
-    validate(element, `check password ${passCount}: need 1 latin letter & 1 number, min length 3`, errField, patternPassword);
+    validate(element, `Check password ${passCount}: need 1 latin letter & 1 number, min length 3`, errField, patternPassword);
     passCount += 1;
   }
   if (element.type.toLowerCase() === 'password') {
@@ -36,11 +40,18 @@ function validateInputs(element, errField) {
     const password2 = document.getElementById('signup-pass2');
     if ((password1.value !== password2.value) && (errCount === 1)) {
       element.style.border = '2px solid red';
-      errField.innerHTML += '<p>check passwords: passwords not match</p>';
+      errField.innerHTML += '<p>Check passwords: passwords not match</p>';
       errField.hidden = false;
       err = false;
       errCount += 1;
     }
+  }
+  if (element.id === 'agree') {
+    let testCheckbox = false;
+    if (element.checked === true) {
+      testCheckbox = true;
+    }
+    errMsgContol(testCheckbox, element, 'For registration You need to accept the Terms', errField);
   }
 }
 

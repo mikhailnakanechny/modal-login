@@ -50,21 +50,22 @@ function hideModal() {
   resetForm.hidden = true;
 }
 
-function hidePassword(passInput) {
+function hidePassword(passInput, btnHide) {
   if (passInput.type === 'password') {
     passInput.type = 'text';
+    btnHide.textContent = 'Show';
     setTimeout(() => {
       passInput.type = 'password';
+      btnHide.textContent = 'Hide';
     }, 2000);
   } else {
     passInput.type = 'password';
   }
 }
 
-btnPassHideLogin.onclick = () => hidePassword(passHideLogin);
-
-btnPassHideRegister1.onclick = () => hidePassword(passHideRegister1);
-btnPassHideRegister2.onclick = () => hidePassword(passHideRegister2);
+btnPassHideLogin.onclick = () => hidePassword(passHideLogin, btnPassHideLogin);
+btnPassHideRegister1.onclick = () => hidePassword(passHideRegister1, btnPassHideRegister1);
+btnPassHideRegister2.onclick = () => hidePassword(passHideRegister2, btnPassHideRegister2);
 
 nav.onclick = function selectTab(event) {
   const { target } = event;
@@ -101,7 +102,6 @@ document.onkeydown = function keyPress(e) {
     hideModal();
   }
 };
-
 
 document.querySelector('.c-auth__login-btn')
   .addEventListener('click', () => {
