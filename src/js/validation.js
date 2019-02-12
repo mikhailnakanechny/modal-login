@@ -4,12 +4,12 @@ const patternUser = /[a-zA-Z]+[a-zA-Z0-9]{2,}/;
 
 function validate(element, errText, errField, regExp) {
   const resultRegTest = regExp.test(element.value);
-  if (!resultRegTest) {
+  if (resultRegTest) {
     element.style.border = '2px solid red';
-    errField.textContent += `\r ${errText}`;
+    errField.innerHTML += `<p>${errText}</p>`;
     errField.hidden = false;
   } else {
-    errField.textContent = '';
+    errField.innerHTML = '';
     errField.hidden = true;
   }
 }
@@ -29,6 +29,7 @@ function validSelection(element, errField) {
 export function validateForm(form) {
   // event.preventDefault();
   const errField = form.querySelector('.c-auth__error');
+  errField.innerHTML = '';
   const elmntArr = form.getElementsByTagName('input');
   [].forEach.call(elmntArr, (element) => {
     validSelection(element, errField);

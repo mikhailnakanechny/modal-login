@@ -53,6 +53,9 @@ function hideModal() {
 function hidePassword(passInput) {
   if (passInput.type === 'password') {
     passInput.type = 'text';
+    setTimeout(() => {
+      passInput.type = 'password';
+    }, 2000);
   } else {
     passInput.type = 'password';
   }
