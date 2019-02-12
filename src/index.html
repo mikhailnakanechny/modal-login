@@ -1,123 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>modal-login</title>
-    <meta name="viewport" content="width=device-width">
-    <link href="./css/normalize.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <title>modal-login</title>
+  <meta name="viewport" content="width=device-width">
+  <link href="./css/normalize.css" rel="stylesheet"/>
 </head>
 <body>
 <header class="c-header">
-    <nav class="c-header__nav">
-        <ul class="c-header__select">
-            <li><a class="c-header__sel c-header__sel-login" href="#">Sign in</a></li>
-            <li><a class="c-header__sel c-header__sel-register c-header__sel--colored" href="#">Sign up</a></li>
-        </ul>
-    </nav>
+  <nav class="c-header__nav">
+    <ul class="c-header__select">
+      <li><a class="c-header__sel c-header__sel-login" href="#">Sign in</a></li>
+      <li><a class="c-header__sel c-header__sel-register c-header__sel--colored" href="#">Sign up</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main>
-    <div class="c-auth" hidden>
-        <div class="c-auth__container">
-            <ul class="c-auth__select">
-                <li><a class="c-auth__sel-login" href="#">Sign in</a></li>
-                <li><a class="c-auth__sel-register" href="#">New account</a></li>
-            </ul>
+  <div class="c-auth" hidden>
+    <div class="c-auth__container">
+      <ul class="c-auth__select">
+        <li><a class="c-auth__sel-login" href="#">Sign in</a></li>
+        <li><a class="c-auth__sel-register" href="#">New account</a></li>
+      </ul>
 
-            <div class="c-auth__forms">
+      <div class="c-auth__forms">
 
-                <form class="c-auth__login" id="#login" hidden>
-                    <p class="c-auth__formfield">
-                        <label class="c-auth__email" for="signin-email">E-mail</label>
-                        <input id="signin-email" type="email"
-                               placeholder="E-mail">
-                    </p>
+        <form class="c-auth__login" id="#login" hidden>
+          <p class="c-auth__formfield">
+            <label class="c-auth__email" for="signin-email">E-mail</label>
+            <input id="signin-email" type="email"
+                   placeholder="E-mail">
+          </p>
 
-                    <p class="c-auth__formfield">
-                        <label class="c-auth__password" for="signin-pass">Password</label>
-                        <input id="signin-pass" type="password"
-                               placeholder="Password">
-                        <a class="hide-pass-login" href="#">Hide</a>
-                    </p>
+          <p class="c-auth__formfield">
+            <label class="c-auth__password" for="signin-pass">Password</label>
+            <input id="signin-pass" type="password"
+                   placeholder="Password">
+            <a class="hide-pass-login" href="#">Hide</a>
+          </p>
 
-                    <p class="c-auth__checkbox">
-                        <input type="checkbox" id="remember-me" checked>
-                        <label for="remember-me">Remember me</label>
-                    </p>
+          <p class="c-auth__checkbox">
+            <input type="checkbox" id="remember-me" checked>
+            <label for="remember-me">Remember me</label>
+          </p>
 
-                    <p class="c-auth__error" hidden>Error validation message</p>
+          <p class="c-auth__error" hidden>Error validation message</p>
 
-                    <p class="c-auth__formfield">
-                        <input class="c-auth__login-btn" type="submit" value="Login">
-                    </p>
+          <p class="c-auth__formfield">
+            <input class="c-auth__login-btn" type="submit" value="Login">
+          </p>
 
-                    <p class="c-auth__outer"><a class="c-auth__outer-reset" href="#">Forgot your password?</a></p>
+          <p class="c-auth__outer"><a class="c-auth__outer-reset" href="#">Forgot your password?</a></p>
 
-                </form>
+        </form>
 
-                <form class="c-auth__register" id="#register" hidden>
+        <form class="c-auth__register" id="#register" hidden>
 
-                    <p class="c-auth__formfield">
-                        <label class="c-auth__user" for="create-user">E-mail</label>
-                        <input id="create-user" type="text" placeholder="Username">
-                    </p>
+          <p class="c-auth__formfield">
+            <label class="c-auth__user" for="create-user">E-mail</label>
+            <input id="create-user" type="text" placeholder="Username">
+          </p>
 
-                    <p class="c-auth__formfield">
-                        <label class="c-auth__email" for="signup-email">E-mail</label>
-                        <input id="signup-email" type="email"
-                               placeholder="E-mail">
-                    </p>
+          <p class="c-auth__formfield">
+            <label class="c-auth__email" for="signup-email">E-mail</label>
+            <input id="signup-email" type="email"
+                   placeholder="E-mail">
+          </p>
 
-                    <p class="c-auth__formfield">
-                        <label class="c-auth__password1" for="signup-pass1">Password</label>
-                        <input id="signup-pass1" type="password"
-                               placeholder="Password">
-                        <a class="hide-pass-register1" href="#">Hide</a>
-                    </p>
+          <p class="c-auth__formfield">
+            <label class="c-auth__password1" for="signup-pass1">Password</label>
+            <input id="signup-pass1" type="password"
+                   placeholder="Password">
+            <a class="hide-pass-register1" href="#">Hide</a>
+          </p>
 
-                    <p class="c-auth__formfield">
-                        <label class="c-auth__password2" for="signup-pass2">Password</label>
-                        <input id="signup-pass2" type="password"
-                               placeholder="Password">
-                        <a class="hide-pass-register2" href="#">Hide</a>
-                    </p>
+          <p class="c-auth__formfield">
+            <label class="c-auth__password2" for="signup-pass2">Password</label>
+            <input id="signup-pass2" type="password"
+                   placeholder="Password">
+            <a class="hide-pass-register2" href="#">Hide</a>
+          </p>
 
-                    <p class="c-auth__checkbox">
-                        <input type="checkbox" id="agree">
-                        <label for="agree">I agree to the Therms</label>
-                    </p>
+          <p class="c-auth__checkbox">
+            <input type="checkbox" id="agree">
+            <label for="agree">I agree to the Therms</label>
+          </p>
 
-                    <p class="c-auth__error" hidden>Error validation message</p>
+          <p class="c-auth__error" hidden>Error validation message</p>
 
-                    <p class="c-auth__formfield">
-                        <input class="c-auth__reg-btn" type="submit" value="Create account">
-                    </p>
+          <p class="c-auth__formfield">
+            <input class="c-auth__reg-btn" type="submit" value="Create account">
+          </p>
 
-                </form>
+        </form>
 
-                <form class="c-auth__reset" id="#reset" hidden>
+        <form class="c-auth__reset" id="#reset" hidden>
 
-                    <p class="c-auth__lost-message">Lost your password? Please, enter your email address.
-                        You will receive a link to create a new password.</p>
+          <p class="c-auth__lost-message">Lost your password? Please, enter your email address.
+            You will receive a link to create a new password.</p>
 
-                    <p class="c-auth__formfield">
-                        <label class="c-auth__email" for="reset-email">E-mail</label>
-                        <input id="reset-email" type="email"
-                               placeholder="E-mail">
-                    </p>
+          <p class="c-auth__formfield">
+            <label class="c-auth__email" for="reset-email">E-mail</label>
+            <input id="reset-email" type="email"
+                   placeholder="E-mail">
+          </p>
 
-                    <p class="c-auth__error" hidden>Error validation message</p>
+          <p class="c-auth__error" hidden>Error validation message</p>
 
-                    <p class="c-auth__formfield">
-                        <input class="c-auth__reset-btn" type="submit" value="Reset password">
-                    </p>
+          <p class="c-auth__formfield">
+            <input class="c-auth__reset-btn" type="submit" value="Reset password">
+          </p>
 
-                    <p class="c-auth__outer"><a class="c-auth__outer-login" href="#">Back to log-in</a></p>
+          <p class="c-auth__outer"><a class="c-auth__outer-login" href="#">Back to log-in</a></p>
 
-                </form>
-            </div>
-        </div>
+        </form>
+      </div>
     </div>
+  </div>
 
 </main>
 </body>
