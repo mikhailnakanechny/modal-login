@@ -6,6 +6,14 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const ghpages = require('gh-pages');
+ghpages.publish('dist', {
+  user: {
+    name: 'mikhailnakanechny',
+    email: 'mikhailnakanechny@gmail.com'
+  }
+},function(err) {});
+
 module.exports = {
   mode: "production",
   entry: ["./src/js/index.js", "./src/scss/style.scss"],
