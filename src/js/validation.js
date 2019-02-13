@@ -13,9 +13,6 @@ function errMsgContol(ok, element, errText, errField) {
     err = true;
   } else {
     element.style.border = null;
-    // // errField.innerHTML = '';
-    // // errField.hidden = true;
-    // err = false;
   }
 }
 
@@ -42,7 +39,7 @@ function validateInputs(element, errField) {
       element.style.border = '2px solid red';
       errField.innerHTML += '<p>Check passwords: passwords not match</p>';
       errField.hidden = false;
-      err = false;
+      err = true;
       errCount += 1;
     }
   }
@@ -64,5 +61,7 @@ export function validateForm(form) {
   passCount = 1;
   const elmntArr = form.getElementsByTagName('input');
   [].forEach.call(elmntArr, element => validateInputs(element, errField, err, errCount, passCount));
-  return !err;
+  if (!err) {
+    form.submit();
+  }
 }
